@@ -1,29 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estival</title>
+    <title>Gerenciador de Tarefas</title>
 </head>
 <body>
-    <div>
-        <h2>Teste</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit assumenda ullam quaerat quos deserunt debitis architecto tenetur repellendus dicta distinctio veritatis corporis, illo optio officiis eum excepturi autem et. Tenetur!</p>
+    <header>
+        <h1>Projeto Dev-FrontEnd</h1>
+        <nav>
+        </nav>
+    </header>
 
-        <div class="botao" onclick="salvar()">Salvar</div>
-        <button class="botao" onclick="salvar()">Salvar</button>    
+    <main>
 
-        <fieldset>
-            <legend>Prioridade</legend>
-            <div>
-                <input type="radio" name="prioridade" id="alta" value="alta">
-                <label for="alta">Alta</label>
-            </div>
-            <div>
-                <input type="radio" name="prioridade" id="media" value="media" checked>
-                <label for="media">Média</label>
-            </div>
-        </fieldset>
-    </div>
+        <section>
+            <h2>Busca e filtros</h2>
+            <form action="">
+                <label for="busca">Buscar:</label>
+                <input type="text" id="busca">
+
+                <fieldset>
+                    <legend>Filtro por status</legend>
+
+                    <ul>
+                        <li>
+                            <label for="status"></label>
+                            <input type="text" id="status">
+                        </li>
+                    </ul>
+                </fieldset>
+
+            </form>
+
+        </section>
+        
+    </main>
+
+    <footer></footer>
 </body>
 </html>
