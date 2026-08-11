@@ -1,24 +1,53 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciador de Tarefas</title>
 </head>
+
 <body>
+
     <header>
-        <h1>Projeto Dev-FrontEnd</h1>
-        <nav>
-        </nav>
+        <h1>Gerenciador de Tarefas Acadêmicas</h1>
     </header>
 
     <main>
+        <section aria-labelledby="filtros-titulo">
+            <h2 id="filtros-titulo">Busca e Filtros</h2>
+            <form action="#" method="get">
 
-        <section>
-            <h2>Busca e filtros</h2>
-            <form action="">
-                <label for="busca">Buscar:</label>
-                <input type="text" id="busca">
+                <div>
+                    <label for="busca-titulo">Buscar por título da tarefa:</label>
+                    <input type="search" id="busca-titulo" name="busca">
+                </div>
+
+                <fieldset>
+                    <legend>Filtro por Status</legend>
+                    <ul>
+                        <li>
+                            <input type="radio" id="status-todos" name="status" value="todos" checked>
+                            <label for="status-todos">Todos</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="status-fazer" name="status" value="a-fazer">
+                            <label for="status-fazer">A Fazer</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="status-andamento" name="status" value="em-andamento">
+                            <label for="status-andamento">Em Andamento</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="status-revisao" name="status" value="em-revisao">
+                            <label for="status-revisao">Em Revisão</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="status-concluida" name="status" value="concluida">
+                            <label for="status-concluida">Concluída</label>
+                        </li>
+                    </ul>
+                </fieldset>
 
                 <fieldset>
                     <legend>Filtro por Prioridade</legend>
@@ -40,16 +69,117 @@
                             <label for="prioridade-alta">Alta</label>
                         </li>
                     </ul>
-
                 </fieldset>
+
                 <button type="submit">Aplicar filtros</button>
-
             </form>
-
         </section>
-        
+
+        <section aria-labelledby="quadro-titulo">
+            <h2 id="quadro-titulo">Quadro de Tarefas</h2>
+            <section aria-labelledby="coluna-fazer">
+                <h3 id="coluna-fazer">A Fazer</h3>
+                <ul>
+                    <li>
+                        <article>
+                            <h4>Pesquisa bibliográfica inicial</h4>
+                            <p>Projeto: TCC - Análise de Dados</p>
+                            <p>Responsável: Felipe</p>
+                            <p>Prazo: 15/09/2026</p>
+                            <p>Prioridade: Alta</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <h4>Ler o capítulo 4 do livro texto</h4>
+                            <p>Projeto:Sociologia da Tecnologia</p>
+                            <p>Responsável: Felipe</p>
+                            <p>Prazo: 22/08/2026</p>
+                            <p>Prioridade: Média</p>
+                        </article>
+                    </li>
+                </ul>
+            </section>
+
+            <section aria-labelledby="coluna-andamento">
+                <h3 id="coluna-andamento">Em Andamento</h3>
+                <ul>
+                    <li>
+                        <article>
+                            <h4>Estruturar HTML semântico</h4>
+                            <p>Projeto: Desenvolvimento Frontend - E1</p>
+                            <p>Responsável: Felipe</p>
+                            <p>Prazo: 12/08/2026</p>
+                            <p>Prioridade: Alta</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <h4>Coletar amostras no laboratório</h4>
+                            <p>Projeto: Pesquisa PIBIC</p>
+                            <p>Responsável: Ana Clara</p>
+                            <p>Prazo: 30/08/2026</p>
+                            <p>Prioridade: Baixa</p>
+                        </article>
+                    </li>
+                </ul>
+            </section>
+
+            <section aria-labelledby="coluna-revisao">
+                <h3 id="coluna-revisao">Em Revisão</h3>
+                <ul>
+                    <li>
+                        <article>
+                            <h4>Revisar artigo acadêmico</h4>
+                            <p>Projeto: Simpósio de Engenharia</p>
+                            <p>Responsável: Prof. Silva</p>
+                            <p>Prazo: 18/08/2026</p>
+                            <p>Prioridade: Média</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <h4>Validar rascunho dos slides</h4>
+                            <p>Projeto: Seminário de Redes</p>
+                            <p>Responsável: João Pedro</p>
+                            <p>Prazo: 25/08/2026</p>
+                            <p>Prioridade: Alta</p>
+                        </article>
+                    </li>
+                </ul>
+            </section>
+
+            <section aria-labelledby="coluna-concluida">
+                <h3 id="coluna-concluida">Concluída</h3>
+                <ul>
+                    <li>
+                        <article>
+                            <h4>Configurar repositório no GitHub</h4>
+                            <p>Projeto: Desenvolvimento Frontend</p>
+                            <p>Responsável: Luis</p>
+                            <p>Prazo: 05/08/2026</p>
+                            <p>Prioridade: Alta</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <h4>Enviar formulário de matrícula</h4>
+                            <p>Projeto: Administrativo</p>
+                            <p>Responsável: Antonia</p>
+                            <p>Prazo: 10/08/2026</p>
+                            <p>Prioridade: Baixa</p>
+                        </article>
+                    </li>
+                </ul>
+            </section>
+        </section>
     </main>
 
-    <footer></footer>
+    <footer>
+        <p>Desenvolvido por: Felipe</p>
+        <p>Desenvolvimento Frontend</p>
+    </footer>
+
 </body>
+
 </html>
