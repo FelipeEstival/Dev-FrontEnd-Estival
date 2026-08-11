@@ -21,15 +21,28 @@
                 <input type="text" id="busca">
 
                 <fieldset>
-                    <legend>Filtro por status</legend>
-
+                    <legend>Filtro por Prioridade</legend>
                     <ul>
                         <li>
-                            <label for="status"></label>
-                            <input type="text" id="status">
+                            <input type="radio" id="prioridade-todas" name="prioridade" value="todas" checked>
+                            <label for="prioridade-todas">Todas</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="prioridade-baixa" name="prioridade" value="baixa">
+                            <label for="prioridade-baixa">Baixa</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="prioridade-media" name="prioridade" value="media">
+                            <label for="prioridade-media">Média</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="prioridade-alta" name="prioridade" value="alta">
+                            <label for="prioridade-alta">Alta</label>
                         </li>
                     </ul>
+
                 </fieldset>
+                <button type="submit">Aplicar filtros</button>
 
             </form>
 
