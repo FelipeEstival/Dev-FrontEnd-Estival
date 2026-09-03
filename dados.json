@@ -1,0 +1,94 @@
+{
+  "tarefas": [
+    {
+      "id": 1,
+      "titulo": "Pesquisa bibliográfica inicial",
+      "projeto": "TCC - Análise de Dados",
+      "responsavel": "Felipe",
+      "prazo": "15/09/2026",
+      "prioridade": "Alta",
+      "status": "a-fazer"
+    },
+    {
+      "id": 2,
+      "titulo": "Ler o capítulo 4 do livro texto",
+      "projeto": "Sociologia da Tecnologia",
+      "responsavel": "Felipe",
+      "prazo": "22/08/2026",
+      "prioridade": "Média",
+      "status": "a-fazer"
+    },
+    {
+      "id": 3,
+      "titulo": "Montar roteiro da entrevista",
+      "projeto": "Pesquisa PIBIC",
+      "responsavel": "Ana Clara",
+      "prazo": "20/09/2026",
+      "prioridade": "Baixa",
+      "status": "a-fazer"
+    },
+    {
+      "id": 4,
+      "titulo": "Estruturar HTML semântico",
+      "projeto": "Desenvolvimento Frontend - E1",
+      "responsavel": "Felipe",
+      "prazo": "12/08/2026",
+      "prioridade": "Alta",
+      "status": "em-andamento"
+    },
+    {
+      "id": 5,
+      "titulo": "Coletar amostras no laboratório",
+      "projeto": "Pesquisa PIBIC",
+      "responsavel": "Ana Clara",
+      "prazo": "30/08/2026",
+      "prioridade": "Baixa",
+      "status": "em-andamento"
+    },
+    {
+      "id": 6,
+      "titulo": "Implementar fetch e estados da tela",
+      "projeto": "Desenvolvimento Frontend - E3",
+      "responsavel": "Felipe",
+      "prazo": "08/09/2026",
+      "prioridade": "Alta",
+      "status": "em-andamento"
+    },
+    {
+      "id": 7,
+      "titulo": "Revisar artigo acadêmico",
+      "projeto": "Simpósio de Engenharia",
+      "responsavel": "Prof. Silva",
+      "prazo": "18/08/2026",
+      "prioridade": "Média",
+      "status": "em-revisao"
+    },
+    {
+      "id": 8,
+      "titulo": "Validar rascunho dos slides",
+      "projeto": "Seminário de Redes",
+      "responsavel": "João Pedro",
+      "prazo": "25/08/2026",
+      "prioridade": "Alta",
+      "status": "em-revisao"
+    },
+    {
+      "id": 9,
+      "titulo": "Configurar repositório no GitHub",
+      "projeto": "Desenvolvimento Frontend",
+      "responsavel": "Luis",
+      "prazo": "05/08/2026",
+      "prioridade": "Alta",
+      "status": "concluida"
+    },
+    {
+      "id": 10,
+      "titulo": "Enviar formulário de matrícula",
+      "projeto": "Administrativo",
+      "responsavel": "Antonia",
+      "prazo": "10/08/2026",
+      "prioridade": "Baixa",
+      "status": "concluida"
+    }
+  ]
+}

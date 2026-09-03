@@ -13,6 +13,7 @@
   --color-status-andamento: #6fb1ff;
   --color-status-revisao: #ff9ecf;
   --color-status-concluida: #7fe0a8;
+  --color-status-erro: #ff8a80;
   --color-primary: #b9a3ff;
   --color-focus: var(--color-text);
   --space-1: 0.25rem;
@@ -213,6 +214,39 @@ main > section:last-of-type > h2 {
   font-size: 1.125rem;
 }
  
+#status-mensagem {
+  order: -1;
+  grid-column: 1 / -1;
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  padding: var(--space-2) var(--space-3);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
+  box-shadow: 3px 3px 0 var(--color-border);
+}
+ 
+#status-mensagem:empty {
+  display: none;
+}
+ 
+#status-mensagem[data-estado="carregando"] {
+  background-color: var(--color-status-andamento);
+}
+ 
+#status-mensagem[data-estado="sucesso"] {
+  background-color: var(--color-status-concluida);
+}
+ 
+#status-mensagem[data-estado="vazio"] {
+  background-color: var(--color-status-fazer);
+}
+ 
+#status-mensagem[data-estado="erro"] {
+  background-color: var(--color-status-erro);
+  color: var(--color-text);
+}
+ 
  
 main > section:last-of-type > section {
   display: flex;
@@ -250,6 +284,7 @@ main > section:last-of-type ul {
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
+  min-height: 2rem;
 }
  
 article {
@@ -312,11 +347,7 @@ footer {
   font-size: 0.8rem;
   color: var(--color-text-muted);
 }
- 
-/* Breakpoint 1: 560px.
-   o formulário de filtro em coluna única já cabe bem no espaço estreito. A partir de 560px sobra
-   largura horizontal, então o form passa a distribuir os campos em
-   linha e os fieldsets ganham base de 260px, aproveitando o espaço sem atrapalhar o controles. */
+
 @media (min-width: 560px) {
   main > section:first-of-type form {
     flex-direction: row;
@@ -332,12 +363,7 @@ footer {
     flex: 1 1 260px;
   }
 }
- 
-/* Breakpoint 2: 680px.
-   Com uma coluna só, o quadro de tarefas fica com cartões muito largos e
-   um scroll vertical longo assim que a tela ganha mais espaço horizontal.
-   A partir de 680px cabem confortavelmente 2 colunas de status lado a lado
-   sem que cada cartão fique estreito demais ou trunque títulos antes da hora. */
+
 @media (min-width: 680px) {
   main > section:last-of-type {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -347,12 +373,7 @@ footer {
     grid-column: 1 / -1;
   }
 }
- 
-/* Breakpoint 3: 960px.
-   Em telas de laptop/desktop ja tem espaço para as 4 colunas de status
-   (Fazer/Andamento/Revisão/Concluída), que é a visão de quadro
-   completa do enunciado. Abaixo 4 colunas deixariam cada uma estreita
-   demais e teria quebra de linha nos cartões.*/
+
 @media (min-width: 960px) {
   main > section:last-of-type {
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -363,13 +384,10 @@ footer {
   }
 }
  
-/* Breakpoint 4: 1280px.
-   Em monitores largos o conteúdo esticsdo ate a borda da viewport deixa
-   as colunas do quadro exageradamente largas e as linhas de texto muito
-   compridas prejudicando a leitura*/
 @media (min-width: 1280px) {
   main {
     max-width: 1400px;
     margin-inline: auto;
   }
 }
+ 

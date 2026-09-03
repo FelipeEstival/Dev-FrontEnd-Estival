@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
+ 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciador de Tarefas</title>
-
+ 
     <link rel="stylesheet" href="styles.css">
 </head>
-
+ 
 <body>
-
+ 
     <header>
         <h1>Gerenciador de Tarefas Acadêmicas</h1>
     </header>
-
+ 
     <main>
         <section aria-labelledby="filtros-titulo">
             <h2 id="filtros-titulo">Busca e Filtros</h2>
             <form action="#" method="get">
-
+ 
                 <div>
                     <label for="busca-titulo">Buscar por título da tarefa:</label>
                     <input type="search" id="busca-titulo" name="busca">
                 </div>
-
+ 
                 <fieldset>
                     <legend>Filtro por Status</legend>
                     <ul>
@@ -50,7 +50,7 @@
                         </li>
                     </ul>
                 </fieldset>
-
+ 
                 <fieldset>
                     <legend>Filtro por Prioridade</legend>
                     <ul>
@@ -72,116 +72,44 @@
                         </li>
                     </ul>
                 </fieldset>
-
+ 
                 <button type="submit">Aplicar filtros</button>
             </form>
         </section>
-
+ 
         <section aria-labelledby="quadro-titulo">
             <h2 id="quadro-titulo">Quadro de Tarefas</h2>
+ 
+            <p id="status-mensagem" role="status" aria-live="polite"></p>
+ 
             <section aria-labelledby="coluna-fazer">
                 <h3 id="coluna-fazer">A Fazer</h3>
-                <ul>
-                    <li>
-                        <article>
-                            <h4>Pesquisa bibliográfica inicial</h4>
-                            <p>Projeto: TCC - Análise de Dados</p>
-                            <p>Responsável: Felipe</p>
-                            <p>Prazo: 15/09/2026</p>
-                            <p>Prioridade: Alta</p>
-                        </article>
-                    </li>
-                    <li>
-                        <article>
-                            <h4>Ler o capítulo 4 do livro texto</h4>
-                            <p>Projeto:Sociologia da Tecnologia</p>
-                            <p>Responsável: Felipe</p>
-                            <p>Prazo: 22/08/2026</p>
-                            <p>Prioridade: Média</p>
-                        </article>
-                    </li>
-                </ul>
+                <ul id="lista-a-fazer"></ul>
             </section>
-
+ 
             <section aria-labelledby="coluna-andamento">
                 <h3 id="coluna-andamento">Em Andamento</h3>
-                <ul>
-                    <li>
-                        <article>
-                            <h4>Estruturar HTML semântico</h4>
-                            <p>Projeto: Desenvolvimento Frontend - E1</p>
-                            <p>Responsável: Felipe</p>
-                            <p>Prazo: 12/08/2026</p>
-                            <p>Prioridade: Alta</p>
-                        </article>
-                    </li>
-                    <li>
-                        <article>
-                            <h4>Coletar amostras no laboratório</h4>
-                            <p>Projeto: Pesquisa PIBIC</p>
-                            <p>Responsável: Ana Clara</p>
-                            <p>Prazo: 30/08/2026</p>
-                            <p>Prioridade: Baixa</p>
-                        </article>
-                    </li>
-                </ul>
+                <ul id="lista-em-andamento"></ul>
             </section>
-
+ 
             <section aria-labelledby="coluna-revisao">
                 <h3 id="coluna-revisao">Em Revisão</h3>
-                <ul>
-                    <li>
-                        <article>
-                            <h4>Revisar artigo acadêmico</h4>
-                            <p>Projeto: Simpósio de Engenharia</p>
-                            <p>Responsável: Prof. Silva</p>
-                            <p>Prazo: 18/08/2026</p>
-                            <p>Prioridade: Média</p>
-                        </article>
-                    </li>
-                    <li>
-                        <article>
-                            <h4>Validar rascunho dos slides</h4>
-                            <p>Projeto: Seminário de Redes</p>
-                            <p>Responsável: João Pedro</p>
-                            <p>Prazo: 25/08/2026</p>
-                            <p>Prioridade: Alta</p>
-                        </article>
-                    </li>
-                </ul>
+                <ul id="lista-em-revisao"></ul>
             </section>
-
+ 
             <section aria-labelledby="coluna-concluida">
                 <h3 id="coluna-concluida">Concluída</h3>
-                <ul>
-                    <li>
-                        <article>
-                            <h4>Configurar repositório no GitHub</h4>
-                            <p>Projeto: Desenvolvimento Frontend</p>
-                            <p>Responsável: Luis</p>
-                            <p>Prazo: 05/08/2026</p>
-                            <p>Prioridade: Alta</p>
-                        </article>
-                    </li>
-                    <li>
-                        <article>
-                            <h4>Enviar formulário de matrícula</h4>
-                            <p>Projeto: Administrativo</p>
-                            <p>Responsável: Antonia</p>
-                            <p>Prazo: 10/08/2026</p>
-                            <p>Prioridade: Baixa</p>
-                        </article>
-                    </li>
-                </ul>
+                <ul id="lista-concluida"></ul>
             </section>
         </section>
     </main>
-
+ 
     <footer>
         <p>Desenvolvido por: Felipe</p>
         <p>Desenvolvimento Frontend</p>
     </footer>
-
+ 
+    <script type="module" src="js/main.js"></script>
 </body>
-
+ 
 </html>
