@@ -1,50 +1,36 @@
 
-import { renderizarTarefas } from './renderizacao.js';
- 
 function obterElementoStatus() {
   return document.getElementById('status-mensagem');
 }
- 
-export function renderizarEstado(estado, dados) {
+
+export function renderizarEstado(estado, visiveis) {
   const elementoStatus = obterElementoStatus();
   if (!elementoStatus) {
     return;
   }
- 
-  elementoStatus.dataset.estado = estado;
- 
-  switch (estado) {
-    case 'carregando': {
-      renderizarTarefas([]);
-      elementoStatus.textContent = 'Carregando tarefas...';
-      break;
-    }
- 
-    case 'sucesso': {
-      renderizarTarefas(dados);
-      const quantidade = dados.length;
-      elementoStatus.textContent =
-        quantidade === 1
-          ? '1 tarefa carregada com sucesso.'
-          : `${quantidade} tarefas carregadas com sucesso.`;
-      break;
-    }
- 
-    case 'vazio': {
-      renderizarTarefas([]);
-      elementoStatus.textContent = 'Nenhuma tarefa cadastrada no momento.';
-      break;
-    }
- 
-    case 'erro': {
-      renderizarTarefas([]);
-      elementoStatus.textContent = dados;
-      break;
-    }
- 
-    default: {
-      elementoStatus.textContent = '';
-    }
+
+  let tipo;
+  let texto;
+
+  if (estado.carregamento === 'carregando') {
+    tipo = 'carregando';
+    texto = 'Carregando tarefas...';
+  } else if (estado.carregamento === 'erro') {
+    tipo = 'erro';
+    texto = estado.erro;
+  } else if (estado.tarefas.length === 0) {
+    tipo = 'vazio'; 
+    texto = 'Nenhuma tarefa cadastrada no momento.';
+  } else if (visiveis.length === 0) {
+    tipo = 'vazio'; 
+    texto = 'Nenhuma tarefa encontrada para esses critérios. Altere a busca ou os filtros, ou use "Limpar filtros".';
+  } else {
+    tipo = 'sucesso';
+    texto = `${visiveis.length} de ${estado.tarefas.length} tarefas`;
+  }
+
+  elementoStatus.dataset.estado = tipo;
+  if (elementoStatus.textContent !== texto) {
+    elementoStatus.textContent = texto;
   }
 }
- 

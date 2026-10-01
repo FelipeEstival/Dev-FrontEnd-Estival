@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
- 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciador de Tarefas</title>
- 
+
     <link rel="stylesheet" href="styles.css">
 </head>
- 
+
 <body>
- 
+
     <header>
         <h1>Gerenciador de Tarefas Acadêmicas</h1>
     </header>
- 
+
     <main>
         <section aria-labelledby="filtros-titulo">
             <h2 id="filtros-titulo">Busca e Filtros</h2>
-            <form action="#" method="get">
- 
+            <form id="form-filtros" action="#" method="get">
+
                 <div>
                     <label for="busca-titulo">Buscar por título da tarefa:</label>
-                    <input type="search" id="busca-titulo" name="busca">
+                    <input type="search" id="busca-titulo" name="busca" autocomplete="off">
                 </div>
- 
+
                 <fieldset>
                     <legend>Filtro por Status</legend>
                     <ul>
@@ -50,7 +50,7 @@
                         </li>
                     </ul>
                 </fieldset>
- 
+
                 <fieldset>
                     <legend>Filtro por Prioridade</legend>
                     <ul>
@@ -72,44 +72,53 @@
                         </li>
                     </ul>
                 </fieldset>
- 
-                <button type="submit">Aplicar filtros</button>
+
+                <div>
+                    <label for="ordenacao">Ordenar por prazo:</label>
+                    <select id="ordenacao" name="ordenacao">
+                        <option value="padrao" selected>Ordem original</option>
+                        <option value="prazo-asc">Prazo mais próximo primeiro</option>
+                        <option value="prazo-desc">Prazo mais distante primeiro</option>
+                    </select>
+                </div>
+
+                <button type="button" id="limpar-filtros">Limpar filtros</button>
             </form>
         </section>
- 
+
         <section aria-labelledby="quadro-titulo">
             <h2 id="quadro-titulo">Quadro de Tarefas</h2>
- 
+
             <p id="status-mensagem" role="status" aria-live="polite"></p>
- 
+
             <section aria-labelledby="coluna-fazer">
                 <h3 id="coluna-fazer">A Fazer</h3>
                 <ul id="lista-a-fazer"></ul>
             </section>
- 
+
             <section aria-labelledby="coluna-andamento">
                 <h3 id="coluna-andamento">Em Andamento</h3>
                 <ul id="lista-em-andamento"></ul>
             </section>
- 
+
             <section aria-labelledby="coluna-revisao">
                 <h3 id="coluna-revisao">Em Revisão</h3>
                 <ul id="lista-em-revisao"></ul>
             </section>
- 
+
             <section aria-labelledby="coluna-concluida">
                 <h3 id="coluna-concluida">Concluída</h3>
                 <ul id="lista-concluida"></ul>
             </section>
         </section>
     </main>
- 
+
     <footer>
         <p>Desenvolvido por: Felipe</p>
         <p>Desenvolvimento Frontend</p>
     </footer>
- 
+
     <script type="module" src="js/main.js"></script>
 </body>
- 
+
 </html>

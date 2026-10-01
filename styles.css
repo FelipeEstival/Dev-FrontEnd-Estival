@@ -391,3 +391,48 @@ footer {
   }
 }
  
+
+/* ===== E4: ordenação e botão "Limpar filtros" ===== */
+select {
+  font-family: inherit;
+  font-size: 1rem;
+  color: inherit;
+}
+
+#ordenacao {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: var(--space-2) var(--space-3);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
+  margin-top: var(--space-1);
+}
+
+/* mesmo visual do antigo botão "Aplicar filtros" */
+button[type="button"] {
+  align-self: flex-start;
+  min-height: 2.75rem;
+  padding: var(--space-2) var(--space-4);
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  box-shadow: 3px 3px 0 var(--color-border);
+  cursor: pointer;
+}
+
+button[type="button"]:hover {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 var(--color-border);
+}
+
+@media (min-width: 560px) {
+  main > section:first-of-type form > div {
+    flex: 1 1 100%;
+  }
+  main > section:first-of-type form > button {
+    flex: 0 0 auto;
+  }
+}
